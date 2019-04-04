@@ -135,8 +135,8 @@ func envInit() (err error) {
 			clang, cflags, err = envClang("iphoneos")
 			cflags += " -miphoneos-version-min=" + buildIOSVersion
 		case "386", "amd64":
-			clang, cflags, err = envClang("iphonesimulator")
-			cflags += " -mios-simulator-version-min=" + buildIOSVersion
+			clang, cflags, err = envClang("macosx")
+			cflags += " -mmacosx-version-min=10.11"
 		default:
 			panic(fmt.Errorf("unknown GOARCH: %q", arch))
 		}
